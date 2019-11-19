@@ -6,9 +6,9 @@ const Comment = ({cid, date, comment}) => {
     const {commentsDispatch} = useContext(CommentsContext);
 
     return (
-        <div>
-            {date}
-            {comment}
+        <div className="comment">
+            <span className="date">{date}</span><br/>
+            {comment} <br/>
             <button 
                 onClick={() => commentsDispatch({type: 'REMOVE_COMMENT', cid})}
             >

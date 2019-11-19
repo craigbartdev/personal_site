@@ -25,3 +25,7 @@
     color: #e7971f;
     margin-left: 30px;
 }
+
+.nav-link:hover{
+    color: #b5db4d;
+}
