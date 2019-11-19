@@ -1,0 +1,15 @@
+/*header element that holds the navbar. fixed to top of page*/
+header {
+    background: #1f4d11;
+    border-bottom: 5px solid #e9910e;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+/*need this for the header band to show upp*/
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+

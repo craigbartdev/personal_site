@@ -1,0 +1,38 @@
+/*wrapper to center inline block div.*/
+/*text align centers an interior div too. must override in .about for inner text*/
+.wrap {
+    text-align: center;
+    width: 100%;
+}
+/*container set to inline block to contein image*/
+.about {
+    display: inline-block;
+    width: 70%;
+    min-height: 200px;
+    text-align: left;
+    margin: 90px auto 150px auto;
+    padding: 0px 20px;
+    border-left: 5px solid #e7971f;
+    border-right: 5px solid #e7971f;
+}
+/*image is contained*/
+.about_img {
+    height: 40%;
+    width: 40%;
+    object-fit: contain;
+    float: left;
+    padding: 0px 5px 5px 0px;
+    margin: 0px 10px 0px 0px;
+}
+
+p {
+    padding: 0px 5px 0px 0px;
+}
+
+.divider {
+    border-style: dashed;
+    border-width: 1px;
+    margin: 0 auto;
+    color: #e7971f;
+    width: 75%;
+}

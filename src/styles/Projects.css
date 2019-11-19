@@ -1,0 +1,11 @@
+/*container for projects section*/
+.projects {
+    width: 70%;
+    margin: 150px auto auto auto;
+}
+/*div table*/
+.projects-list {
+    float: left;
+    padding: 0;
+    margin: 0;
+}

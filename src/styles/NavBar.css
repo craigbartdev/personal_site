@@ -1,0 +1,27 @@
+/*contain the logo and navbar to 4/5 the screen width*/
+.container {
+    width: 95%;
+    margin: 0 auto; /*must adjust margin for width to work*/
+}
+/*for react logo*/
+.logo {
+    height: 70px;
+    float: left; /*important for alignment*/
+    padding-top: 10px;
+}
+/*for entire nav element*/
+#nav-bar {
+    float: right;
+    color: #e7971f;
+    font-size: 1.6em;
+    padding: 0px 0px 0px 0px;
+}
+/*for lis in nav-list ul*/
+#nav-list li{
+    display: inline-flex;
+}
+/*styling for links*/
+.nav-link {
+    color: #e7971f;
+    margin-left: 30px;
+}

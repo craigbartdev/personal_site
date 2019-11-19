@@ -1,0 +1,117 @@
+/*in Form component*/
+.form {
+    margin: 140px auto 0px auto;
+    width: 60%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px 20px 20px 20px;
+    height: 500px;
+}
+/*title input*/
+.formTitle {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 0px 0px 8px 0px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+/*change color on focus*/
+.formTitle:focus {
+    outline-color: #1f4d11;
+}
+/*textarea input*/
+.formBody {
+    resize: none;
+    width: 100%;
+    min-height: 325px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px 14px;
+    font-size: 16px;
+}
+/*change color on focus*/
+.formBody:focus {
+    outline-color: #1f4d11;
+}
+/*form button*/
+.formButton {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #1f4d11;
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 4px;
+    border: none;
+    margin: 6px 0px 0px 0px;
+    cursor: pointer;
+}
+
+.formButton:hover {
+    background-color: #17360d;
+    color: #e9910e;
+    border-bottom: 2px solid #e9910e;
+}
+
+/*in Notes component*/
+.blog-link {
+    color: #1f4d11;
+    text-align: right;
+}
+
+.blog-link:hover {
+    color: #e9910e;
+}
+
+.notes {
+    margin: 140px auto 0px auto;
+    width: 60%;
+    padding: 0px 0 40px 0;
+}
+/*in Note component*/
+/*make Link text black*/
+.note-link {
+    color: black;
+}
+/*make Link text stay black*/
+.note-link:hover {
+    color: black;
+}
+
+.note {
+    background-color: #f2f2f2;
+    padding: 10px 10px 5px 10px;
+    margin-bottom: 20px;
+    border: 1px dashed #e9910e;
+}
+
+.date {
+    float: right;
+}
+
+.note-title {
+    font-size: 22px;
+    font-weight: bold;
+    /*ellipses after overflow of line*/
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+ /*pre-wrap preserves the whitespace from the textarea input*/
+.note-body {
+    white-space: pre-wrap;
+    padding: 0px;
+    margin: 5px 0px;
+    font-size: 16px;
+    /*ellipses after overflow with 5 lines of text*/
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;  
+      
+}
