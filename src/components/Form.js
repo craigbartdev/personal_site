@@ -1,4 +1,5 @@
 import React, {useState, useContext} from 'react';
+import ScrollToTopOnMount from './ScrollToTopOnMount';
 import BlogContext from '../context/blog-context';
 import '../styles/Blog.css';
 import getCurrentDate from '../functions/getCurrentDate';
@@ -9,8 +10,8 @@ const Form = (props) => {
 
     const { dispatch } = useContext(BlogContext);
     
-    const [title, setTitle] = useState('');
-    const [body, setBody] = useState('');
+    const [title, setTitle] = useState(props.entry ? props.entry.title : '');
+    const [body, setBody] = useState(props.entry ? props.entry.body : '');
 
     const addNote = (e) => {
         e.preventDefault()
@@ -26,11 +27,22 @@ const Form = (props) => {
         props.history.push('/blog');
     }
 
+    const editNote = (e) => {
+        e.preventDefault()
+
+        dispatch({type: 'UPDATE_ENTRY', id: props.entry.id, updates: {title, body}})
+        setTitle('')
+        setBody('')
+
+        props.history.push('/blog')
+    }
+
 
     return (
         <>
+        <ScrollToTopOnMount />
         <div className="form">
-            <form onSubmit={addNote}>
+            <form onSubmit={props.entry ? editNote : addNote}>
                 <h2>Form</h2>
                 <input 
                     onChange={e => setTitle(e.target.value)}

@@ -3,19 +3,22 @@
 /*use a transparent border instead*/
 .project {
     margin-bottom: 50px;
+    padding: 0px 0px 0px 3%;
+    width: 46%;
 }
 /*title*/
 .project-title {
-    margin-bottom: 5px;
+    margin-bottom: 5px; 
 }
+
 /*the h5 tag for list of technologies*/
 .using {
-    margin-bottom: 2px;
+    margin-bottom: 5px;
     margin-top: 15px;
 }
 /*the p tag*/
 .description {
-    margin: 0px;
+    margin: 0px 0px 10px 0px;
 }
 
 .repo-link {

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import BlogEntry from './components/BlogEntry';
+import EditEntry from './components/EditEntry';
 import Form from './components/Form';
 import Header from './components/Header';
 import Notes from './components/Notes';
@@ -55,18 +56,24 @@ const Routing = () => {
                                 <Notes />
                             </div>
                         )} />
-                        <Route path="/blog/:id" render={(props) => (
+                        <Route exact path="/blog/:id" render={(props) => (
                             <div>
                                 <Header />
                                 <BlogEntry {...props}/>
                             </div>
-                        )} />              
+                        )} />            
                         <Route exact path="/blogform" render={props => (
                             <div>
                                 <Header />
                                 <Form {...props}/> {/* pass props to Form for redirect in form */}
                             </div>
                         )} />
+                        <Route path="/blog/update/:id" render={(props) => (
+                            <div>
+                                <Header />
+                                <EditEntry {...props} />
+                            </div>
+                        )} />  
                         <Route component={NotFound} />
                     </Switch>
                 </Router>

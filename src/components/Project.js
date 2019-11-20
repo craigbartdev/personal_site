@@ -19,7 +19,7 @@ const Project = ({title, using, description, link}) => {
 
     return (
     <div className="project">
-    <h3 className="project-title">{title}</h3>
+        <h3 className="project-title">{title}</h3>
         <hr className="title-hr"/>
         <h4 className="using">{useLink(using)}</h4>
         <p className="description">

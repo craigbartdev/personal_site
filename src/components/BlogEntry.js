@@ -18,6 +18,7 @@ const BlogEntry = (props) => {
         <div className='notes'>
             <ScrollToTopOnMount />
             <Link to="/blog" className="blog-link"><h4>Back to Blog</h4></Link>
+            <Link to={"/blog/update/" + id} className="blog-link"><h4>Update Entry</h4></Link>
             {/* entries loads as undefined for a split second so we wait for it to render */}
             {typeof entry !== 'undefined' ?
             (<div>

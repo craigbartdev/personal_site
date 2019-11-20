@@ -11,6 +11,14 @@ const blogReducer = (state, action) => {
             ]
         case 'REMOVE_ENTRY':
             return state.filter(entry => entry.id !== action.id)
+        case 'UPDATE_ENTRY':
+            return state.map(entry => {
+                if (entry.id === action.id) {
+                    return {...entry, ...action.updates}
+                } else {
+                    return entry
+                }
+            })
         case 'POPULATE_BLOG':
             return action.entries
         default:

@@ -5,9 +5,9 @@ import Project from './Project';
 const Projects = () => {
     return (
         <div className="projects">
-            <h2 className="project-title">
+            <h1 className="projects-title">
                 My Projects
-            </h2>
+            </h1>
             <div className="projects-list">
                 <Project 
                     title="Mean Stack Web App" 
