@@ -1,8 +1,9 @@
 import React, {useState, useContext} from  'react';
+import axios from 'axios';
 import Comment from './Comment';
-import getCurrentDate from '../functions/getCurrentDate';
+//import getCurrentDate from '../functions/getCurrentDate';
 import CommentsContext from '../context/comments-context';
-import '../styles/BlogEntry.css';
+import '../styles/Comments.css';
 
 const Comments = ({id}) => {
     const [comment, setComment] = useState('');
@@ -12,11 +13,16 @@ const Comments = ({id}) => {
     const addComment = (e) => {
         e.preventDefault();
 
-        const date = getCurrentDate();
+        const commentPost = {entryId: id, body: comment}
 
-        commentsDispatch({type: 'ADD_COMMENT', nid: id, comment, date});
+        axios.post("http://localhost:63656/api/comments", commentPost)
+            .then(res => {
+                const c = res.data;
 
-        setComment('')
+                commentsDispatch({type: 'ADD_COMMENT', cid: c.id, nid: id, comment, date: c.datePosted});
+
+                setComment('')
+            })
     }
 
     return (

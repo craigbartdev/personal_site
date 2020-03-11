@@ -5,7 +5,7 @@ import BlogContext from '../context/blog-context';
 const EditEntry = (props) => {
     const {entries} = useContext(BlogContext);
 
-    const entry = entries.find(entry => entry.id === props.match.params.id)
+    const entry = entries.find(entry => entry.id === Number(props.match.params.id))
 
     return (
         <>

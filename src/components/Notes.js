@@ -5,7 +5,7 @@ import ScrollToTopOnMount from './ScrollToTopOnMount';
 import BlogContext from '../context/blog-context';
 import '../styles/Blog.css';
 
-
+//Blog
 const Notes = () => {
 
     const {entries} = useContext(BlogContext)

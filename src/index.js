@@ -1,6 +1,8 @@
 import React, {useReducer, useEffect} from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 import './index.css';
+import './styles/ScrollBar.css';
 import App from './components/App';
 import BlogEntry from './components/BlogEntry';
 import EditEntry from './components/EditEntry';
@@ -21,23 +23,23 @@ const Routing = () => {
 
     //we always get the entries/comments only when the app mounts
     useEffect(() => {
-        const entries = JSON.parse(localStorage.getItem('entries'));
-        const comments = JSON.parse(localStorage.getItem('comments'));
+        axios.get("http://localhost:63656/api/entries")
+            .then(res => {
+                let entries = [];
 
-        if (entries) {
-            dispatch({ type: 'POPULATE_BLOG', entries})
-        }
+                res.data.forEach(e => entries.push({id : e.id, title: e.title, date: e.datePosted, body: e.body}))
 
-        if (comments) {
-            commentsDispatch({ type: 'POPULATE_COMMENTS', comments})
-        }
+                dispatch({type: 'POPULATE_BLOG', entries})
+            });
+
+        axios.get("http://localhost:63656/api/comments")
+            .then(res => {
+                let comments = [];
+
+                res.data.forEach(c => comments.push({cid: c.id, nid: c.entryId, date: c.datePosted, comment: c.body}))
+                commentsDispatch({type: 'POPULATE_COMMENTS', comments})
+            });
     }, [])
-
-    //any time the entries/comments state updates we update it in storage
-    useEffect(() => {
-        localStorage.setItem('entries', JSON.stringify(entries))
-        localStorage.setItem('comments', JSON.stringify(comments))
-    }, [entries, comments])
 
     return (
         <BlogContext.Provider value={{entries, dispatch}}>

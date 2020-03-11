@@ -7,18 +7,14 @@
 .logo {
     height: 70px;
     float: left; /*important for alignment*/
-    padding-top: 10px;
+    padding-top: 8px;
+    padding-bottom: 10px;
 }
 /*for entire nav element*/
 #nav-bar {
-    float: right;
     color: #e7971f;
     font-size: 1.6em;
     padding: 0px 0px 0px 0px;
-}
-/*for lis in nav-list ul*/
-#nav-list li{
-    display: inline-flex;
 }
 /*styling for links*/
 .nav-link {
@@ -28,4 +24,63 @@
 
 .nav-link:hover{
     color: #b5db4d;
+}
+
+@media only screen and (min-width: 769px) {
+    #nav-bar {
+        float: right;
+    }
+
+    .nav-icon {
+        display: none;
+    }
+    /*for lis in nav-list ul*/
+    .nav-list li{
+        display: inline-flex;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #nav-bar {
+        float: right;
+        margin-right: 10px;
+    }
+
+    .nav-list {
+        display: none;
+    }
+
+    .nav-list.toggled {
+        display: block;
+        list-style-type: none;
+        text-align: right;
+        padding-top: 40px;
+    }
+
+    .nav-list li{
+        padding-top: 30px;
+        font-size: 34px;
+    }
+
+    .nav-icon {
+        float: right;
+        margin: 25px auto 0px auto;
+        cursor: pointer;
+        padding: 8px 16px;
+        font-size: large;
+        font-weight: bold;
+        color: white;
+        background-color: #17360d;
+        border: 1px solid #e9910e;
+        border-radius: 4px;
+        letter-spacing: 1.5px;
+    }
+
+    .nav-icon:hover {
+        color: #e9910e;
+    }
+
+    .nav-icon:focus {
+        outline-color: white;
+    }
 }

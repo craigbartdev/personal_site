@@ -1,4 +1,5 @@
 import React, {useContext} from 'react';
+import axios from 'axios';
 import BlogContext from '../context/blog-context';
 import CommentsContext from '../context/comments-context';
 import {Link} from 'react-router-dom';
@@ -8,9 +9,14 @@ const Note = ({entry}) => {
     const { dispatch } = useContext(BlogContext)
     const { commentsDispatch } = useContext(CommentsContext)
 
-    const removeEntry = () => {
-        dispatch({ type: 'REMOVE_ENTRY', id: entry.id})
-        commentsDispatch({ type: 'CLEAR_NOTE_COMMENTS', nid: entry.id})
+    const removeEntry = (e) => {
+        e.preventDefault();
+
+        axios.delete("http://localhost:63656/api/entries/" + entry.id)
+            .then(
+                dispatch({ type: 'REMOVE_ENTRY', id: entry.id}),
+                commentsDispatch({ type: 'CLEAR_NOTE_COMMENTS', nid: entry.id})
+            )
     }
 
     return (

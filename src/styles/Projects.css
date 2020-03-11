@@ -1,18 +1,42 @@
-/*container for projects section*/
-.projects {
-    width: 80%;
-    margin: 150px auto auto auto;
-}
-
-.projects-title {
-    text-align: left;
-    padding: 0px 0px 30px 3%;
-}
-
-/*div table*/
 .projects-list {
     display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 0;
+    margin: 0 auto 50px auto;
+    padding: 0px auto 0px auto;
+}
+
+@media only screen and (min-width: 768px) {
+    /*container for projects section*/
+    .projects {
+        width: 80%;
+        margin: 150px auto auto auto;
+    }
+
+    .projects-title {
+        padding: 0px auto 40px auto;
+    }
+
+        /*div table*/
+    .projects-list {
+        flex-wrap: wrap;
+        justify-content: space-between; /*space between projects using full space of div*/
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .projects {
+        width: 90%;
+        text-align: center;
+        margin: 100px auto auto auto;
+    }
+
+    .projects-title {
+        padding-bottom: 10px;
+    }
+
+    /*div table*/
+    .projects-list {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        border-bottom: 1px dotted #e7971f; /*keeps up the design pattern for .project*/
+    }
 }

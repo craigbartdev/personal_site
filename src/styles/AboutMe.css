@@ -7,15 +7,13 @@
 /*container set to inline block to contein image*/
 .about {
     display: inline-block;
-    width: 70%;
     min-height: 200px;
     text-align: left;
-    margin: 90px auto 150px auto;
     padding: 0px 20px;
     border-left: 5px solid #e7971f;
     border-right: 5px solid #e7971f;
 }
-/*image is contained*/
+/*image is contained within div*/
 .about_img {
     height: 40%;
     width: 40%;
@@ -25,14 +23,32 @@
     margin: 0px 10px 0px 0px;
 }
 
-p {
-    padding: 0px 5px 0px 0px;
-}
-
 .divider {
     border-style: dashed;
-    border-width: 1px;
+    border-width: 1.25px;
     margin: 0 auto;
-    color: #e7971f;
-    width: 80%;
+    padding: 0 auto;
+    color: #1f4d11;
+}
+
+@media only screen and (min-width: 768px) {
+    .divider {
+        width: 80%;
+    }
+
+    .about {
+        width: 70%;
+        margin: 90px auto 150px auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .divider {
+        width: 90%;
+    }
+
+    .about {
+        width: 80%;
+        margin: 50px auto 120px auto;
+    }
 }

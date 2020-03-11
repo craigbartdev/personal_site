@@ -6,7 +6,7 @@ header {
     top: 0;
     width: 100%;
 }
-/*need this for the header band to show upp*/
+/*need this for the header band to show up*/
 header::after {
     content: '';
     display: table;

@@ -1,10 +1,10 @@
-import uuid from 'uuid';
+//import uuid from 'uuid';
 
 const commentsReducer = (state, action) => {
     switch(action.type) {
         case 'ADD_COMMENT':
             return [
-                { cid: uuid.v4(), nid: action.nid, date: action.date, comment: action.comment},
+                { cid: action.cid, nid: action.nid, date: action.date, comment: action.comment},
                 ...state
             ]
         case 'REMOVE_COMMENT':
